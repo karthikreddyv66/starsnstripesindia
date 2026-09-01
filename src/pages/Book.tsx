@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FadeIn, GoldDivider, Rule, Eyebrow, OutlineBtn, PageHero, IMG_TIGER1, CreditCardIcon } from '../components/shared'
 import PaymentModal from '../components/PaymentModal'
+import TermsModal from '../components/TermsModal'
 
 export default function Book() {
   const [form, setForm] = useState({
@@ -15,6 +16,7 @@ export default function Book() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [showPayModal, setShowPayModal] = useState(false)
+  const [showTermsModal, setShowTermsModal] = useState(false)
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
@@ -66,12 +68,13 @@ export default function Book() {
               </p>
             </div>
 
-            <Link
-              to="/pricing#cancellation-policy"
-              className="w-full py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all flex items-center justify-center gap-2 border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white text-center"
+            <button
+              type="button"
+              onClick={() => setShowTermsModal(true)}
+              className="w-full py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all flex items-center justify-center gap-2 border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white text-center cursor-pointer"
             >
-              Terms and Conditions
-            </Link>
+              Terms and Conditions (PDF)
+            </button>
             <OutlineBtn to="/pricing">Review Full Pricing Details</OutlineBtn>
           </FadeIn>
 
@@ -187,6 +190,13 @@ export default function Book() {
           setShowPayModal(false)
           setSubmitted(true)
         }}
+      />
+
+      {/* Terms & Conditions PDF Modal */}
+      <TermsModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        pdfUrl="/Terms_and_Conditions.pdf"
       />
     </>
   )

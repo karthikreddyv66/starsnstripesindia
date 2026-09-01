@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FadeIn, GoldDivider, Rule, CheckIcon, XIcon, Eyebrow, GoldBtn, OutlineBtn, PageHero, IMG_TIGER1, CreditCardIcon } from '../components/shared'
+import { FadeIn, GoldDivider, Rule, CheckIcon, XIcon, Eyebrow, GoldBtn, OutlineBtn, PageHero, IMG_TIGER1 } from '../components/shared'
 import PaymentModal from '../components/PaymentModal'
+import TermsModal from '../components/TermsModal'
 
 const INCLUDED_SUMMARY = [
   'Nagpur (NAG) airport pick-up and drop-off',
@@ -34,6 +35,7 @@ const CANCELLATION_POLICY = [
 export default function Pricing() {
   const [members, setMembers] = useState(1)
   const [showModal, setShowModal] = useState(false)
+  const [showTermsModal, setShowTermsModal] = useState(false)
   const [payAmount, setPayAmount] = useState(2000)
   const [payTitle, setPayTitle] = useState('Expedition Deposit')
 
@@ -122,9 +124,10 @@ export default function Pricing() {
                 >
                   Fill in Booking Form
                 </Link>
-                <a
-                  href="#cancellation-policy"
-                  className="inline-flex items-center justify-center px-8 py-4 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border transition-colors gap-2"
+                <button
+                  type="button"
+                  onClick={() => setShowTermsModal(true)}
+                  className="inline-flex items-center justify-center px-8 py-4 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border transition-colors gap-2 cursor-pointer"
                   style={{ borderColor: 'rgba(201,162,75,0.4)', color: '#C9A24B' }}
                   onMouseEnter={e => {
                     e.currentTarget.style.borderColor = '#C9A24B'
@@ -136,7 +139,7 @@ export default function Pricing() {
                   }}
                 >
                   Terms and Conditions
-                </a>
+                </button>
               </div>
             </div>
 
@@ -211,12 +214,13 @@ export default function Pricing() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <GoldBtn to="/book">Fill in Booking Form</GoldBtn>
-                <a
-                  href="#cancellation-policy"
-                  className="inline-flex items-center justify-center px-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white transition-all gap-2"
+                <button
+                  type="button"
+                  onClick={() => setShowTermsModal(true)}
+                  className="inline-flex items-center justify-center px-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white transition-all gap-2 cursor-pointer"
                 >
                   Terms and Conditions
-                </a>
+                </button>
               </div>
             </div>
           </FadeIn>
@@ -265,6 +269,13 @@ export default function Pricing() {
         onClose={() => setShowModal(false)}
         itemTitle={payTitle}
         amountUSD={payAmount}
+      />
+
+      {/* Terms & Conditions PDF Modal */}
+      <TermsModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        pdfUrl="/Terms_and_Conditions.pdf"
       />
     </>
   )
