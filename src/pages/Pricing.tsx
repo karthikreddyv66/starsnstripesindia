@@ -5,7 +5,7 @@ import PaymentModal from '../components/PaymentModal'
 
 const INCLUDED_SUMMARY = [
   'Nagpur (NAG) airport pick-up and drop-off',
-  'Private 4x4 Innova road transfers and dedicated safari jeeps',
+  'Private 4x4 Innova road transfers and dedicated safari vehicles',
   'All safari jeep and park permit fees for Pench & Tadoba-Andhari (9 safaris total)',
   'Twin-share luxury jungle lodge accommodations with private en-suite bathrooms',
   'All meals (breakfast, lunch, and dinner) throughout the stay',
@@ -19,7 +19,7 @@ const NOT_INCLUDED_SUMMARY = [
   'Flights to/from Nagpur Airport (NAG)',
   'Single room upgrade — USD 1,500 per person, subject to availability',
   'Visa fees (Indian e-Visa)',
-  'Health and travel insurance',
+  'Health and travel insurance (strongly recommended)',
   'Camera gear rental (star tracker, telephoto lens)',
   'Tips, personal expenses, and anything not listed above',
 ]
@@ -174,8 +174,51 @@ export default function Pricing() {
 
       <Rule />
 
-      {/* ── Cancellation Policy ─────────────────────────────────────── */}
+      {/* ── HOW TO BOOK? (Placed above Cancellation Policy) ─────────── */}
       <section style={{ background: '#FFFFFF' }} className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <Eyebrow className="mb-3 text-xs">Reservation &amp; Next Steps</Eyebrow>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
+              HOW TO BOOK?
+            </h2>
+
+            <div className="p-8 md:p-10 rounded-sm bg-[#F2EDE2] border border-[#A07828]/20 flex flex-col gap-6">
+              <p className="text-base font-semibold leading-relaxed" style={{ color: '#0D1B2A' }}>
+                This inaugural expedition is limited to 8 photographers. To secure your place, please fill in the form on our booking page.
+              </p>
+
+              <div className="p-5 bg-white rounded-sm border border-black/[0.06]">
+                <p className="text-base font-bold text-[#7A5C1E] mb-1">
+                  A USD 2,000 deposit reserves your spot; the remaining balance is due by October 15, 2026.
+                </p>
+                <p className="text-xs text-[#637282]">
+                  Total tour price: USD 6,900 per person (double occupancy). Single room upgrade: USD 1,500.
+                </p>
+              </div>
+
+              <p className="text-sm leading-relaxed text-[#4A5568]">
+                This tour is governed by our Terms and Conditions, including cancellation policy, weather/wildlife disclaimer, and payment terms.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <GoldBtn to="/book">Fill in Booking Form</GoldBtn>
+                <button
+                  onClick={() => openCheckout(2000, 'Expedition Reserve Deposit (USD 2,000)')}
+                  className="inline-flex items-center justify-center px-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white transition-all gap-2"
+                >
+                  <CreditCardIcon className="w-4 h-4" /> Pay Deposit Directly ($2,000 USD)
+                </button>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <GoldDivider />
+
+      {/* ── Cancellation Policy ─────────────────────────────────────── */}
+      <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Eyebrow className="mb-3 text-xs">Terms &amp; Refund Schedule</Eyebrow>
@@ -183,7 +226,7 @@ export default function Pricing() {
               Cancellation Policy
             </h2>
 
-            <div className="p-8 md:p-10 rounded-sm bg-[#FAFAF7] mb-8" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
+            <div className="p-8 md:p-10 rounded-sm bg-white mb-8" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
               <ul className="flex flex-col gap-4 mb-8">
                 {CANCELLATION_POLICY.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
