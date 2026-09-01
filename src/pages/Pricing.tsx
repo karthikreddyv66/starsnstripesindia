@@ -113,22 +113,30 @@ export default function Pricing() {
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() => openCheckout(totalDeposit, `Expedition Deposit (${members} ${members === 1 ? 'Guest' : 'Guests'})`)}
+                <Link
+                  to="/book"
                   className="inline-flex items-center justify-center px-8 py-4 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all gap-2"
                   style={{ background: '#A07828', color: '#fff' }}
                   onMouseEnter={e => (e.currentTarget.style.background = '#7A5C1E')}
-                  onMouseLeave={e => (e.currentTarget.style.background = '#A07828')}>
-                  <CreditCardIcon className="w-4 h-4" /> Pay Deposit (${totalDeposit.toLocaleString()} USD)
-                </button>
-                <button
-                  onClick={() => openCheckout(totalPrice, `Full Expedition Payment (${members} ${members === 1 ? 'Guest' : 'Guests'})`)}
+                  onMouseLeave={e => (e.currentTarget.style.background = '#A07828')}
+                >
+                  Fill in Booking Form
+                </Link>
+                <a
+                  href="#cancellation-policy"
                   className="inline-flex items-center justify-center px-8 py-4 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border transition-colors gap-2"
                   style={{ borderColor: 'rgba(201,162,75,0.4)', color: '#C9A24B' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#C9A24B' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(201,162,75,0.4)' }}>
-                  Pay Full (${totalPrice.toLocaleString()} USD)
-                </button>
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = '#C9A24B'
+                    e.currentTarget.style.background = 'rgba(201,162,75,0.1)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'rgba(201,162,75,0.4)'
+                    e.currentTarget.style.background = 'transparent'
+                  }}
+                >
+                  Terms and Conditions
+                </a>
               </div>
             </div>
 
