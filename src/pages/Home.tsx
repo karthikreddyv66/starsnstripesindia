@@ -144,11 +144,11 @@ export default function Home() {
 
       <Rule />
 
-      {/* ── Page 2: Section header: OVERVIEW ──────────────────────────────── */}
+      {/* ── Overview Section ──────────────────────────────── */}
       <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-4 text-xs">Section header: OVERVIEW</Eyebrow>
+            <Eyebrow className="mb-4">Overview</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-8" style={{ color: '#0D1B2A' }}>
               The experience — Two worlds. One unforgettable journey.
             </h2>
@@ -175,13 +175,13 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Pench & Tadoba Columns (Page 2 & 3) */}
+            {/* Pench & Tadoba Destination Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               
-              {/* Pench National Park (left column) */}
+              {/* Pench National Park */}
               <div className="p-8 rounded-sm bg-white flex flex-col justify-between" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
                 <div>
-                  <Eyebrow className="mb-2 text-[10px]">Left Column</Eyebrow>
+                  <Eyebrow className="mb-2 text-[10px]" style={{ color: '#1A4080' }}>India's First Dark Sky Park</Eyebrow>
                   <h3 className="font-serif text-xl font-bold mb-4" style={{ color: '#0D1B2A' }}>Pench National Park</h3>
                   <p className="text-sm leading-relaxed mb-6" style={{ color: '#4A5568' }}>
                     Pench Tiger Reserve became India's first Dark Sky Park in January 2024, recognizing successful efforts to reduce light pollution and improve the quality of the night sky. Set among forest, meadows and open clearings, Pench pairs a rare, internationally certified dark sky with a genuine tiger landscape — a setting built for star trails, wide-field nightscapes, twilight landscapes, and environmental wildlife imagery, all without leaving the reserve.
@@ -192,10 +192,10 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tadoba-Andhari Tiger Reserve (right column) */}
+              {/* Tadoba-Andhari Tiger Reserve */}
               <div className="p-8 rounded-sm bg-white flex flex-col justify-between" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
                 <div>
-                  <Eyebrow className="mb-2 text-[10px]">Right Column</Eyebrow>
+                  <Eyebrow className="mb-2 text-[10px]" style={{ color: '#1A5030' }}>Tiger Photography Focus</Eyebrow>
                   <h3 className="font-serif text-xl font-bold mb-4" style={{ color: '#0D1B2A' }}>Tadoba-Andhari Tiger Reserve</h3>
                   <p className="text-sm leading-relaxed mb-6" style={{ color: '#4A5568' }}>
                     Tadoba-Andhari Tiger Reserve is Maharashtra's oldest and largest national park, and one of India's most tiger-dense reserves — a mosaic of dry deciduous forest, teak groves and shimmering lakes where sightings of the Bengal tiger are among the most reliable in the world. Its remote buffer villages sit far from major light pollution, and April's dry season draws animals to shrinking waterholes, making this the peak window for tiger encounters in central India, with a mix of full-day and half-day safaris to maximize your time in the field.

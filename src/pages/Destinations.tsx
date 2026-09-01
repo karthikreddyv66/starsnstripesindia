@@ -36,7 +36,7 @@ export default function Destinations() {
   return (
     <>
       <PageHero
-        eyebrow="Section header: DESTINATIONS"
+        eyebrow="Two Iconic Destinations"
         title="Pench &amp; Tadoba-Andhari"
         subtitle="Two extraordinary reserves in central India: dark-sky astrophotography and Bengal tiger wildlife photography."
         bg={IMG_MILKY}
@@ -44,11 +44,11 @@ export default function Destinations() {
 
       <GoldDivider />
 
-      {/* ── Page 10: Pench National Park | April 5–9, 2027 ─────────────────── */}
+      {/* ── Pench National Park | April 5–9, 2027 ─────────────────── */}
       <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-3 text-xs">Page 10</Eyebrow>
+            <Eyebrow className="mb-3 text-xs" style={{ color: '#1A4080' }}>Astrophotography &amp; Tigers · 4 Nights</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0D1B2A' }}>
               Pench National Park | April 5–9, 2027
             </h2>
@@ -80,11 +80,11 @@ export default function Destinations() {
 
       <Rule />
 
-      {/* ── Page 10: Tadoba-Andhari Tiger Reserve | April 9–14, 2027 ────────── */}
+      {/* ── Tadoba-Andhari Tiger Reserve | April 9–14, 2027 ────────── */}
       <section style={{ background: '#FFFFFF' }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-3 text-xs">Page 10</Eyebrow>
+            <Eyebrow className="mb-3 text-xs" style={{ color: '#1A5030' }}>Tiger Sanctuary Focus · 5 Nights</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0D1B2A' }}>
               Tadoba-Andhari Tiger Reserve | April 9–14, 2027
             </h2>

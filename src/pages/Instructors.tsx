@@ -36,11 +36,11 @@ export default function Instructors() {
 
       <GoldDivider />
 
-      {/* ── Page 12: YOUR CO-DIRECTORS ────────────────────────────────────── */}
+      {/* ── YOUR CO-DIRECTORS ────────────────────────────────────── */}
       <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-3 text-xs">Page 12</Eyebrow>
+            <Eyebrow className="mb-3 text-xs">Leadership</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
               YOUR CO-DIRECTORS
             </h2>
@@ -84,9 +84,9 @@ export default function Instructors() {
             {/* JOINING US IN PENCH */}
             <div className="p-8 rounded-sm bg-white" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
               <div className="h-1.5 w-16 bg-[#1A4080] mb-6" />
-              <Eyebrow className="mb-2 text-[10px]">JOINING US IN PENCH</Eyebrow>
+              <Eyebrow className="mb-2 text-[10px]" style={{ color: '#1A4080' }}>DarkSky International Advocate</Eyebrow>
               <h3 className="font-serif text-xl font-bold mb-4" style={{ color: '#0D1B2A' }}>
-                Abhishek Pawse — Astrophotography Expert
+                Abhishek Pawse — Astrophotography Expert (Joining us in Pench)
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#4A5568' }}>
                 Abhishek joins the expedition for four nights in Pench as our astrophotography expert. He is a DarkSky International advocate whose work with the Pench Forest Department helped secure Pench's designation as India's first Dark Sky Park in January 2024, and leads our night-sky sessions, covering star tracking, exposure stacking, and post-processing for Milky Way and star-trail imagery.
@@ -99,11 +99,11 @@ export default function Instructors() {
 
       <Rule />
 
-      {/* ── Page 13: WHAT TO BRING ────────────────────────────────────────── */}
+      {/* ── WHAT TO BRING ────────────────────────────────────────── */}
       <section style={{ background: '#FFFFFF' }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-3 text-xs">Page 13</Eyebrow>
+            <Eyebrow className="mb-3 text-xs">Packing &amp; Gear Checklist</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
               WHAT TO BRING
             </h2>

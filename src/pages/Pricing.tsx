@@ -52,8 +52,8 @@ export default function Pricing() {
   return (
     <>
       <PageHero
-        eyebrow="Page 15"
-        title="Pricing &amp; Details"
+        eyebrow="Inaugural Expedition · April 5–14, 2027"
+        title="Pricing &amp; What's Included"
         subtitle="USD 6,900 per person (double occupancy — inaugural expedition, limited to 8 photographers)"
         bg={IMG_TIGER1}
       />
@@ -164,11 +164,11 @@ export default function Pricing() {
 
       <Rule />
 
-      {/* ── Page 14: ACCOMMODATION & TRANSPORTATION ───────────────────────── */}
+      {/* ── ACCOMMODATION & TRANSPORTATION ───────────────────────── */}
       <section style={{ background: '#FFFFFF' }} className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-3 text-xs">Page 14</Eyebrow>
+            <Eyebrow className="mb-3 text-xs">Jungle Lodges &amp; 4x4 Safaris</Eyebrow>
             <h2 className="font-serif text-3xl font-bold mb-8 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
               ACCOMMODATION &amp; TRANSPORTATION
             </h2>
@@ -217,11 +217,11 @@ export default function Pricing() {
 
       <GoldDivider />
 
-      {/* ── Page 16: Cancellation Policy ──────────────────────────────────── */}
+      {/* ── Cancellation Policy ──────────────────────────────────── */}
       <section style={{ background: '#FAFAF7' }} className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <Eyebrow className="mb-3 text-xs">Page 16</Eyebrow>
+            <Eyebrow className="mb-3 text-xs">Terms &amp; Refund Schedule</Eyebrow>
             <h2 className="font-serif text-3xl font-bold mb-6 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
               Cancellation Policy
             </h2>

@@ -32,7 +32,7 @@ export default function Book() {
   return (
     <>
       <PageHero
-        eyebrow="Section header: HOW TO BOOK?"
+        eyebrow="Reserve Your Place · April 5–14, 2027"
         title="HOW TO BOOK?"
         subtitle="This inaugural expedition is limited to 8 photographers. A USD 2,000 deposit reserves your spot; the remaining balance is due by October 15, 2026."
         bg={IMG_TIGER1}
@@ -40,14 +40,14 @@ export default function Book() {
 
       <GoldDivider />
 
-      {/* ── Page 16: HOW TO BOOK? Form & Details ──────────────────────────── */}
+      {/* ── HOW TO BOOK? Form & Details ──────────────────────────── */}
       <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-14 items-start">
           
           {/* Left Column: Verbatim PDF terms & quick summary */}
           <FadeIn className="lg:col-span-2 flex flex-col gap-6">
             <div className="p-8 rounded-sm bg-white" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
-              <Eyebrow className="mb-2 text-xs">Page 16</Eyebrow>
+              <Eyebrow className="mb-2 text-xs">Reservation Policy</Eyebrow>
               <h2 className="font-serif text-2xl font-bold mb-4 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
                 HOW TO BOOK?
               </h2>
