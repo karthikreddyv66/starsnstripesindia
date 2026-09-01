@@ -39,6 +39,7 @@ export default function Book() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
   const [showPayModal, setShowPayModal] = useState(false)
   const [showTermsModal, setShowTermsModal] = useState(false)
 
@@ -408,10 +409,33 @@ export default function Book() {
                   />
                 </div>
 
+                {/* ── TERMS & CONDITIONS CHECKPOINT ───────────────────── */}
+                <div className="flex items-start gap-3 p-4 rounded-sm bg-[#F2EDE2]/60 border border-[#A07828]/25 transition-colors hover:bg-[#F2EDE2]/80">
+                  <input
+                    type="checkbox"
+                    id="agree-terms-checkbox"
+                    required
+                    checked={agreedToTerms}
+                    onChange={e => setAgreedToTerms(e.target.checked)}
+                    className="mt-0.5 w-4 h-4 text-[#A07828] border-black/20 rounded-xs focus:ring-[#A07828] cursor-pointer accent-[#A07828]"
+                  />
+                  <label htmlFor="agree-terms-checkbox" className="text-xs leading-relaxed text-[#3D4F60] cursor-pointer select-none">
+                    I have read, understood, and agree to the{' '}
+                    <button
+                      type="button"
+                      onClick={() => setShowTermsModal(true)}
+                      className="font-semibold text-[#A07828] underline underline-offset-2 hover:text-[#7A5C1E] cursor-pointer inline-flex items-center gap-0.5"
+                    >
+                      Terms &amp; Conditions
+                    </button>
+                    , including the cancellation policy, booking guidelines, and wildlife &amp; weather disclaimer. <span className="text-[#A07828] font-bold">*</span>
+                  </label>
+                </div>
+
                 {/* Submit & Proceed to Deposit Button */}
                 <button
                   type="submit"
-                  className="w-full py-4 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all mt-2 cursor-pointer shadow-sm flex items-center justify-center gap-2"
+                  className="w-full py-4 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all mt-1 cursor-pointer shadow-sm flex items-center justify-center gap-2"
                   style={{ background: '#A07828', color: '#fff' }}
                   onMouseEnter={e => (e.currentTarget.style.background = '#7A5C1E')}
                   onMouseLeave={e => (e.currentTarget.style.background = '#A07828')}
