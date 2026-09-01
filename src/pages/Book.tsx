@@ -42,9 +42,9 @@ export default function Book() {
   const [showPayModal, setShowPayModal] = useState(false)
   const [showTermsModal, setShowTermsModal] = useState(false)
 
-  // Handle number of guests change dynamically
+  // Handle number of guests change dynamically (capped at 8 photographers max)
   const handleGuestCountChange = (count: number) => {
-    const newCount = Math.max(1, Math.min(10, count))
+    const newCount = Math.max(1, Math.min(8, count))
     setFormData(prev => {
       let updatedGuests = [...prev.guests]
       if (newCount > updatedGuests.length) {
@@ -231,7 +231,7 @@ export default function Book() {
                         onFocus={e => (e.target.style.borderColor = '#A07828')}
                         onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                       >
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                           <option key={num} value={num}>
                             {num} {num === 1 ? 'Guest' : 'Guests'} (Deposit: ${(num * depositPerGuest).toLocaleString()} USD)
                           </option>
