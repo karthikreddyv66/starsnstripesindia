@@ -2,38 +2,14 @@ import { useState } from 'react'
 import { FadeIn, GoldDivider, Rule, Eyebrow, OutlineBtn, PageHero, IMG_TIGER1, CreditCardIcon } from '../components/shared'
 import PaymentModal from '../components/PaymentModal'
 
-const STEPS = [
-  {
-    n: '01',
-    title: 'Submit Your Enquiry',
-    body: 'Complete the form below with your details and camera setup. We will review availability and confirm your reservation within 48 hours.'
-  },
-  {
-    n: '02',
-    title: 'Pay $2,000 USD Deposit',
-    body: 'A deposit of $2,000 USD per person secures your spot on this inaugural expedition. The remaining balance of $4,900 USD is due by October 15, 2026.'
-  },
-  {
-    n: '03',
-    title: 'Pre-Tour Video Call',
-    body: 'Join a dedicated online planning and gear-review video call with Co-Directors Himanshu Bagde and Srini to ensure you are 100% prepared.'
-  },
-  {
-    n: '04',
-    title: 'Meet in Nagpur (April 5)',
-    body: 'Arrive at Nagpur Airport (NAG) by 9:30 AM on April 5, 2027. Group meetup at 10:00 AM at the Radisson Blu Hotel for our private 4x4 transfer to Pench.'
-  },
-]
-
 export default function Book() {
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     country: '',
-    occupancy: 'Double Occupancy (Twin-Share)',
+    occupancy: 'Twin-share ($6,900 USD)',
     experience: 'Intermediate',
-    cameraGear: '',
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
@@ -56,83 +32,51 @@ export default function Book() {
   return (
     <>
       <PageHero
-        eyebrow="Reserve Your Spot"
-        title="Book the Expedition"
-        subtitle="Inaugural edition limited to 8 photographers. April 5–14, 2027. Secure your place with a $2,000 USD deposit."
+        eyebrow="Section header: HOW TO BOOK?"
+        title="HOW TO BOOK?"
+        subtitle="This inaugural expedition is limited to 8 photographers. A USD 2,000 deposit reserves your spot; the remaining balance is due by October 15, 2026."
         bg={IMG_TIGER1}
       />
 
       <GoldDivider />
 
-      {/* How it works */}
-      <section style={{ background: '#FAFAF7' }} className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <Eyebrow className="mb-3">Reservation Steps</Eyebrow>
-            <h2 className="font-serif text-3xl font-bold mb-12" style={{ color: '#0D1B2A' }}>How to Book</h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {STEPS.map((step, i) => (
-              <FadeIn key={step.n} delay={i * 80} className="p-7 rounded-sm flex flex-col justify-between"
-                style={{ background: '#FFFFFF', border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
-                <div>
-                  <p className="font-serif font-black mb-4" style={{ fontSize: 36, color: 'rgba(160,120,40,0.22)', lineHeight: 1 }}>{step.n}</p>
-                  <h3 className="font-serif text-base font-semibold mb-3" style={{ color: '#0D1B2A' }}>{step.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: '#4A5568' }}>{step.body}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Rule />
-
-      {/* Form & Facts */}
-      <section style={{ background: '#FFFFFF' }} className="py-20 px-6">
+      {/* ── Page 16: HOW TO BOOK? Form & Details ──────────────────────────── */}
+      <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-14 items-start">
-
-          {/* Sidebar */}
+          
+          {/* Left Column: Verbatim PDF terms & quick summary */}
           <FadeIn className="lg:col-span-2 flex flex-col gap-6">
-            <div>
-              <Eyebrow className="mb-3">Expedition Summary</Eyebrow>
-              <h2 className="font-serif text-3xl font-bold mb-5" style={{ color: '#0D1B2A' }}>Booking Enquiry</h2>
-              <p className="text-sm leading-relaxed" style={{ color: '#637282' }}>
-                Fill in your details below to reserve your place. Our co-directors will follow up within 48 hours to confirm availability and share payment documentation.
+            <div className="p-8 rounded-sm bg-white" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
+              <Eyebrow className="mb-2 text-xs">Page 16</Eyebrow>
+              <h2 className="font-serif text-2xl font-bold mb-4 uppercase tracking-wide" style={{ color: '#0D1B2A' }}>
+                HOW TO BOOK?
+              </h2>
+              
+              <p className="text-sm leading-relaxed mb-4" style={{ color: '#3D4F60' }}>
+                This inaugural expedition is limited to 8 photographers. To secure your place, please fill in the form.
               </p>
-            </div>
-            <div className="p-6 rounded-sm" style={{ background: '#FBF3E0', border: '1px solid rgba(160,120,40,0.18)' }}>
-              <p className="eyebrow text-[10px] mb-4" style={{ color: '#A07828' }}>Key Expedition Facts</p>
-              {[
-                ['Tour dates', 'April 5–14, 2027 (10 Days / 9 Nights)'],
-                ['Total Price', '$6,900 USD per person'],
-                ['Deposit Required', '$2,000 USD per person'],
-                ['Balance Due', 'October 15, 2026 ($4,900 USD)'],
-                ['Single Room Upgrade', '$1,500 USD per person'],
-                ['Group Size', 'Maximum 8 photographers'],
-                ['Arrival / Departure', 'Nagpur Airport (NAG)'],
-                ['Tiger Safaris', '9 Safaris (52 Hours total)'],
-                ['Dark-Sky Sessions', '4 Nights in Pench (New Moon)'],
-              ].map(([label, value]) => (
-                <div key={label} className="flex justify-between items-start py-2.5" style={{ borderBottom: '1px solid rgba(13,27,42,0.07)' }}>
-                  <span className="text-xs" style={{ color: '#637282' }}>{label}</span>
-                  <span className="text-xs font-semibold text-right ml-4" style={{ color: '#0D1B2A' }}>{value}</span>
-                </div>
-              ))}
+              
+              <p className="text-sm font-semibold leading-relaxed mb-4" style={{ color: '#7A5C1E' }}>
+                A USD 2,000 deposit reserves your spot; the remaining balance is due by October 15, 2026.
+              </p>
+
+              <p className="text-xs italic leading-relaxed text-[#637282] pt-4 border-t border-black/[0.06]">
+                This tour is governed by our Terms and Conditions, including cancellation policy, weather/wildlife disclaimer, and payment terms.
+              </p>
             </div>
 
             <button
               onClick={() => setShowPayModal(true)}
               className="w-full py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all flex items-center justify-center gap-2 border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white"
             >
-              <CreditCardIcon className="w-4 h-4" /> Pay Deposit Directly ($2,000 USD)
+              <CreditCardIcon className="w-4 h-4" /> Pay Deposit Directly (USD 2,000)
             </button>
             <OutlineBtn to="/pricing">Review Full Pricing Details</OutlineBtn>
           </FadeIn>
 
-          {/* Form card */}
-          <FadeIn delay={100} className="lg:col-span-3 rounded-sm overflow-hidden"
-            style={{ background: '#FAFAF7', border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow-md)' }}>
+          {/* Right Column: Form */}
+          <FadeIn delay={100} className="lg:col-span-3 rounded-sm overflow-hidden bg-white"
+            style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow-md)' }}>
             {submitted ? (
               <div className="p-12 text-center">
                 <div className="w-14 h-14 rounded-full mx-auto mb-6 flex items-center justify-center"
@@ -141,18 +85,22 @@ export default function Book() {
                     <path d="M5 13l4 4L19 7" stroke="#1A5030" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl font-bold mb-3" style={{ color: '#0D1B2A' }}>Enquiry Received</h3>
+                <h3 className="font-serif text-2xl font-bold mb-3" style={{ color: '#0D1B2A' }}>Reservation Received</h3>
                 <p className="text-sm leading-relaxed" style={{ color: '#637282' }}>
-                  Thank you, {form.name}. We have received your booking request for Stars, Stripes &amp; Wild India (April 5–14, 2027). We will follow up via email at {form.email} shortly.
+                  Thank you, {form.name}. We have received your booking request for the inaugural expedition (April 5–14, 2027). A confirmation email has been sent to {form.email}.
                 </p>
               </div>
             ) : (
               <form onSubmit={submit} className="p-8 md:p-10 flex flex-col gap-5">
+                <h3 className="font-serif text-xl font-bold mb-2" style={{ color: '#0D1B2A' }}>
+                  Expedition Reservation Form
+                </h3>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
                     <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Full Name *</label>
                     <input name="name" required value={form.name} onChange={handle}
-                      placeholder="e.g. David Richardson"
+                      placeholder="Your Full Name"
                       style={inputStyle}
                       onFocus={e => (e.target.style.borderColor = '#A07828')}
                       onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')} />
@@ -169,7 +117,7 @@ export default function Book() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
-                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Phone / WhatsApp</label>
+                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Phone Number</label>
                     <input name="phone" value={form.phone} onChange={handle}
                       placeholder="+1 (555) 000-0000"
                       style={inputStyle}
@@ -177,9 +125,9 @@ export default function Book() {
                       onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')} />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Country of Residence</label>
+                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Country</label>
                     <input name="country" value={form.country} onChange={handle}
-                      placeholder="e.g. United Kingdom, USA"
+                      placeholder="Country of residence"
                       style={inputStyle}
                       onFocus={e => (e.target.style.borderColor = '#A07828')}
                       onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')} />
@@ -188,18 +136,18 @@ export default function Book() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
-                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Room Occupancy</label>
+                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Occupancy Option</label>
                     <select name="occupancy" value={form.occupancy} onChange={handle}
                       style={{ ...inputStyle, cursor: 'pointer' }}>
-                      <option value="Double Occupancy (Twin-Share)">Double Occupancy ($6,900 USD)</option>
-                      <option value="Single Room Upgrade (+$1,500)">Single Room Upgrade ($8,400 USD)</option>
+                      <option value="Twin-share ($6,900 USD)">Twin-Share Room (USD 6,900)</option>
+                      <option value="Single Room Upgrade (+$1,500 USD)">Single Room Upgrade (+USD 1,500)</option>
                     </select>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Photography Level</label>
+                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Photography Experience</label>
                     <select name="experience" value={form.experience} onChange={handle}
                       style={{ ...inputStyle, cursor: 'pointer' }}>
-                      <option value="Beginner">Beginner / Enthusiast</option>
+                      <option value="Beginner">Beginner / All Levels</option>
                       <option value="Intermediate">Intermediate</option>
                       <option value="Advanced / Semi-Pro">Advanced / Semi-Pro</option>
                     </select>
@@ -207,18 +155,9 @@ export default function Book() {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Camera Equipment &amp; Lenses (Optional)</label>
-                  <input name="cameraGear" value={form.cameraGear} onChange={handle}
-                    placeholder="e.g. Sony A7IV, 200-600mm, 14mm f/1.8"
-                    style={inputStyle}
-                    onFocus={e => (e.target.style.borderColor = '#A07828')}
-                    onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')} />
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Message / Questions</label>
+                  <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>Message / Inquiries</label>
                   <textarea name="message" rows={3} value={form.message} onChange={handle}
-                    placeholder="Tell us about any specific interests, dietary needs, or questions..."
+                    placeholder="Any questions regarding gear, diet, or arrival arrangements..."
                     style={{ ...inputStyle, resize: 'vertical' }}
                     onFocus={e => (e.target.style.borderColor = '#A07828')}
                     onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')} />
@@ -229,7 +168,7 @@ export default function Book() {
                   style={{ background: '#A07828', color: '#fff' }}
                   onMouseEnter={e => (e.currentTarget.style.background = '#7A5C1E')}
                   onMouseLeave={e => (e.currentTarget.style.background = '#A07828')}>
-                  Submit Enquiry &amp; Proceed to Deposit
+                  Submit Reservation &amp; Proceed to Deposit
                 </button>
               </form>
             )}
@@ -241,7 +180,7 @@ export default function Book() {
       <PaymentModal
         isOpen={showPayModal}
         onClose={() => setShowPayModal(false)}
-        itemTitle="Expedition Reserve Deposit (April 5–14, 2027)"
+        itemTitle="Expedition Reserve Deposit (USD 2,000)"
         amountUSD={2000}
         onSuccess={() => {
           setShowPayModal(false)
