@@ -220,34 +220,34 @@ export default function Book() {
                   {/* Number of Guests & Occupancy Option */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-1.5">
-                      <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                      <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                         NUMBER OF GUESTS *
                       </label>
                       <select
                         required
                         value={formData.numberOfGuests}
                         onChange={e => handleGuestCountChange(parseInt(e.target.value, 10))}
-                        style={{ ...inputStyle, cursor: 'pointer', fontWeight: 600, fontSize: 13.5 }}
+                        style={{ ...inputStyle, cursor: 'pointer', fontWeight: 600, fontSize: 13 }}
                         onFocus={e => (e.target.style.borderColor = '#A07828')}
                         onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                       >
                         {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                           <option key={num} value={num}>
-                            {num} {num === 1 ? 'Guest' : 'Guests'}
+                            {num} {num === 1 ? 'Guest' : 'Guests'} (${(num * depositPerGuest).toLocaleString()} USD)
                           </option>
                         ))}
                       </select>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                      <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                         OCCUPANCY OPTION *
                       </label>
                       <select
                         required
                         value={formData.occupancy}
                         onChange={e => handleFieldChange('occupancy', e.target.value)}
-                        style={{ ...inputStyle, cursor: 'pointer', fontSize: 13.5 }}
+                        style={{ ...inputStyle, cursor: 'pointer', fontSize: 13 }}
                         onFocus={e => (e.target.style.borderColor = '#A07828')}
                         onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                       >
@@ -259,13 +259,13 @@ export default function Book() {
 
                   {/* Photography Experience */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                    <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                       PHOTOGRAPHY EXPERIENCE
                     </label>
                     <select
                       value={formData.photographyExperience}
                       onChange={e => handleFieldChange('photographyExperience', e.target.value)}
-                      style={{ ...inputStyle, cursor: 'pointer', fontSize: 13.5 }}
+                      style={{ ...inputStyle, cursor: 'pointer', fontSize: 13 }}
                       onFocus={e => (e.target.style.borderColor = '#A07828')}
                       onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                     >
@@ -303,7 +303,7 @@ export default function Book() {
                         {/* Row 1: Full Name & Email Address */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                            <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                               Full Name *
                             </label>
                             <input
@@ -319,7 +319,7 @@ export default function Book() {
                           </div>
 
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                            <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                               Email Address {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
@@ -335,11 +335,11 @@ export default function Book() {
                           </div>
                         </div>
 
-                        {/* Row 2: Phone (with code) & Nationality */}
+                        {/* Row 2: Phone (include code) & Nationality */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
-                              Phone Number {isPrimary ? '*' : '(Optional)'}
+                            <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                              Phone (Include Code) {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
                               type="tel"
@@ -354,7 +354,7 @@ export default function Book() {
                           </div>
 
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                            <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                               Nationality *
                             </label>
                             <input
@@ -372,7 +372,7 @@ export default function Book() {
 
                         {/* Row 3: Full Address */}
                         <div className="flex flex-col gap-1.5">
-                          <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                          <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                             Full Address *
                           </label>
                           <textarea
