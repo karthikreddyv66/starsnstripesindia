@@ -234,7 +234,7 @@ export default function Book() {
                       >
                         {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                           <option key={num} value={num}>
-                            {num} {num === 1 ? 'Guest' : 'Guests'} (${(num * depositPerGuest).toLocaleString()} USD)
+                            {num} {num === 1 ? 'Guest' : 'Guests'} (Deposit: ${(num * depositPerGuest).toLocaleString()} USD)
                           </option>
                         ))}
                       </select>
@@ -270,9 +270,9 @@ export default function Book() {
                       onFocus={e => (e.target.style.borderColor = '#A07828')}
                       onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                     >
-                      <option value="Beginner / All Levels">Beginner / All Levels</option>
+                      <option value="Beginner">Beginner</option>
                       <option value="Intermediate">Intermediate</option>
-                      <option value="Advanced / Semi-Pro">Advanced / Semi-Pro</option>
+                      <option value="Experienced">Experienced</option>
                     </select>
                   </div>
                 </div>
