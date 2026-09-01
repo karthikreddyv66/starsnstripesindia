@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FadeIn, GoldDivider, Rule, Eyebrow, OutlineBtn, PageHero, IMG_TIGER1, CreditCardIcon } from '../components/shared'
 import PaymentModal from '../components/PaymentModal'
 
@@ -65,12 +66,12 @@ export default function Book() {
               </p>
             </div>
 
-            <button
-              onClick={() => setShowPayModal(true)}
-              className="w-full py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all flex items-center justify-center gap-2 border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white"
+            <Link
+              to="/pricing#cancellation-policy"
+              className="w-full py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all flex items-center justify-center gap-2 border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white text-center"
             >
-              <CreditCardIcon className="w-4 h-4" /> Pay Deposit Directly (USD 2,000)
-            </button>
+              Terms and Conditions
+            </Link>
             <OutlineBtn to="/pricing">Review Full Pricing Details</OutlineBtn>
           </FadeIn>
 

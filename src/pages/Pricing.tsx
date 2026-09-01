@@ -203,12 +203,12 @@ export default function Pricing() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <GoldBtn to="/book">Fill in Booking Form</GoldBtn>
-                <button
-                  onClick={() => openCheckout(2000, 'Expedition Reserve Deposit (USD 2,000)')}
+                <a
+                  href="#cancellation-policy"
                   className="inline-flex items-center justify-center px-8 py-3.5 text-[11px] tracking-[0.18em] uppercase font-semibold rounded-sm border border-[#A07828] text-[#A07828] hover:bg-[#A07828] hover:text-white transition-all gap-2"
                 >
-                  <CreditCardIcon className="w-4 h-4" /> Pay Deposit Directly ($2,000 USD)
-                </button>
+                  Terms and Conditions
+                </a>
               </div>
             </div>
           </FadeIn>
@@ -218,7 +218,7 @@ export default function Pricing() {
       <GoldDivider />
 
       {/* ── Cancellation Policy ─────────────────────────────────────── */}
-      <section style={{ background: '#FAFAF7' }} className="py-24 px-6">
+      <section id="cancellation-policy" style={{ background: '#FAFAF7' }} className="py-24 px-6 scroll-mt-20">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Eyebrow className="mb-3 text-xs">Terms &amp; Refund Schedule</Eyebrow>
