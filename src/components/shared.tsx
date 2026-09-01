@@ -140,7 +140,7 @@ const NAV_LINKS = [
   { label: 'Itinerary', to: '/itinerary' },
   { label: 'Destinations', to: '/destinations' },
   { label: 'Instructors', to: '/instructors' },
-  { label: "What's Included", to: '/pricing' },
+  { label: "What's Included", to: '/whats-included' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'FAQ', to: '/faq' },
 ]
@@ -242,6 +242,7 @@ const FOOTER_LINKS = [
   { label: 'Itinerary', to: '/itinerary' },
   { label: 'Destinations', to: '/destinations' },
   { label: 'Instructors', to: '/instructors' },
+  { label: "What's Included", to: '/whats-included' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'FAQ', to: '/faq' },
 ]
