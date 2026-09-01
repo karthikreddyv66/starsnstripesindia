@@ -220,7 +220,7 @@ export default function Book() {
                   {/* Number of Guests & Occupancy Option */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-1.5">
-                      <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                      <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
                         NUMBER OF GUESTS *
                       </label>
                       <select
@@ -240,7 +240,7 @@ export default function Book() {
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                      <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
                         OCCUPANCY OPTION *
                       </label>
                       <select
@@ -303,7 +303,7 @@ export default function Book() {
                         {/* Row 1: Full Name & Email Address */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
                               Full Name *
                             </label>
                             <input
@@ -319,7 +319,7 @@ export default function Book() {
                           </div>
 
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
                               Email Address {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
@@ -338,8 +338,8 @@ export default function Book() {
                         {/* Row 2: Phone (include code) & Nationality */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
-                              Phone Number (Include Country Code) {isPrimary ? '*' : '(Optional)'}
+                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
+                              Phone (inc. country code) {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
                               type="tel"
@@ -354,7 +354,7 @@ export default function Book() {
                           </div>
 
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
                               Nationality *
                             </label>
                             <input
