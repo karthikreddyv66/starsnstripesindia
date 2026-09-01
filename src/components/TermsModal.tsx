@@ -1,16 +1,14 @@
 import { useEffect } from 'react'
-import termsPdf from '../assets/Terms_and_Conditions.pdf'
+import { TERMS_PDF_BASE64 } from '../assets/termsPdfBase64'
 
 interface TermsModalProps {
   isOpen: boolean
   onClose: () => void
-  pdfUrl?: string
 }
 
 export default function TermsModal({
   isOpen,
   onClose,
-  pdfUrl = termsPdf
 }: TermsModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -27,6 +25,15 @@ export default function TermsModal({
   }, [isOpen, onClose])
 
   if (!isOpen) return null
+
+  const handleDownload = () => {
+    const link = document.createElement('a')
+    link.href = TERMS_PDF_BASE64
+    link.download = 'Stars_Stripes_Wild_India_Terms_and_Conditions.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   const handlePrint = () => {
     window.print()
@@ -67,13 +74,11 @@ export default function TermsModal({
               <span>Print</span>
             </button>
 
-            {/* Direct PDF Download Link */}
-            <a
-              href={pdfUrl}
-              download="Stars_Stripes_Wild_India_Terms_and_Conditions.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-sm text-xs font-semibold bg-[#A07828] hover:bg-[#7A5C1E] text-white transition-colors"
+            {/* Direct Binary PDF Download Button */}
+            <button
+              type="button"
+              onClick={handleDownload}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-sm text-xs font-semibold bg-[#A07828] hover:bg-[#7A5C1E] text-white transition-colors cursor-pointer shadow-sm"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -81,7 +86,7 @@ export default function TermsModal({
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
               <span>Download PDF</span>
-            </a>
+            </button>
 
             {/* Close Button */}
             <button
