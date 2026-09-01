@@ -220,52 +220,52 @@ export default function Book() {
                   {/* Number of Guests & Occupancy Option */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-1.5">
-                      <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
+                      <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                         NUMBER OF GUESTS *
                       </label>
                       <select
                         required
                         value={formData.numberOfGuests}
                         onChange={e => handleGuestCountChange(parseInt(e.target.value, 10))}
-                        style={{ ...inputStyle, cursor: 'pointer', fontWeight: 600 }}
+                        style={{ ...inputStyle, cursor: 'pointer', fontWeight: 600, fontSize: 13.5 }}
                         onFocus={e => (e.target.style.borderColor = '#A07828')}
                         onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                       >
                         {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                           <option key={num} value={num}>
-                            {num} {num === 1 ? 'Guest' : 'Guests'} (Deposit: ${(num * depositPerGuest).toLocaleString()} USD)
+                            {num} {num === 1 ? 'Guest' : 'Guests'}
                           </option>
                         ))}
                       </select>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
+                      <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                         OCCUPANCY OPTION *
                       </label>
                       <select
                         required
                         value={formData.occupancy}
                         onChange={e => handleFieldChange('occupancy', e.target.value)}
-                        style={{ ...inputStyle, cursor: 'pointer' }}
+                        style={{ ...inputStyle, cursor: 'pointer', fontSize: 13.5 }}
                         onFocus={e => (e.target.style.borderColor = '#A07828')}
                         onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                       >
-                        <option value="Twin-Share Room (USD 6,900)">Twin-Share Room (USD 6,900)</option>
-                        <option value="Single Room Upgrade (+USD 1,500)">Single Room Upgrade (+USD 1,500)</option>
+                        <option value="Twin-Share Room (USD 6,900)">Twin-Share (USD 6,900)</option>
+                        <option value="Single Room Upgrade (+USD 1,500)">Single Room (+USD 1,500)</option>
                       </select>
                     </div>
                   </div>
 
                   {/* Photography Experience */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                    <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                       PHOTOGRAPHY EXPERIENCE
                     </label>
                     <select
                       value={formData.photographyExperience}
                       onChange={e => handleFieldChange('photographyExperience', e.target.value)}
-                      style={{ ...inputStyle, cursor: 'pointer' }}
+                      style={{ ...inputStyle, cursor: 'pointer', fontSize: 13.5 }}
                       onFocus={e => (e.target.style.borderColor = '#A07828')}
                       onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                     >
@@ -303,7 +303,7 @@ export default function Book() {
                         {/* Row 1: Full Name & Email Address */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
+                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                               Full Name *
                             </label>
                             <input
@@ -311,7 +311,7 @@ export default function Book() {
                               required
                               value={guest.name}
                               onChange={e => handleGuestChange(idx, 'name', e.target.value)}
-                              placeholder={isPrimary ? 'Primary Contact Full Name' : `Guest ${idx + 1} Full Name`}
+                              placeholder={isPrimary ? 'Primary Contact Name' : `Guest ${idx + 1} Name`}
                               style={inputStyle}
                               onFocus={e => (e.target.style.borderColor = '#A07828')}
                               onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
@@ -319,7 +319,7 @@ export default function Book() {
                           </div>
 
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
+                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                               Email Address {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
@@ -335,18 +335,18 @@ export default function Book() {
                           </div>
                         </div>
 
-                        {/* Row 2: Phone (include code) & Nationality */}
+                        {/* Row 2: Phone (with code) & Nationality */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
-                              Phone (inc. country code) {isPrimary ? '*' : '(Optional)'}
+                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
+                              Phone Number {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
                               type="tel"
                               required={isPrimary}
                               value={guest.phone}
                               onChange={e => handleGuestChange(idx, 'phone', e.target.value)}
-                              placeholder="+1 (555) 000-0000 / +91 98765 43210"
+                              placeholder="+1 (555) 000-0000"
                               style={inputStyle}
                               onFocus={e => (e.target.style.borderColor = '#A07828')}
                               onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
@@ -354,7 +354,7 @@ export default function Book() {
                           </div>
 
                           <div className="flex flex-col gap-1.5">
-                            <label className="eyebrow text-[10px] min-h-[18px] flex items-end" style={{ color: '#637282' }}>
+                            <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                               Nationality *
                             </label>
                             <input
@@ -362,7 +362,7 @@ export default function Book() {
                               required
                               value={guest.nationality}
                               onChange={e => handleGuestChange(idx, 'nationality', e.target.value)}
-                              placeholder="e.g. American, Indian, British, Australian..."
+                              placeholder="e.g. American, Indian"
                               style={inputStyle}
                               onFocus={e => (e.target.style.borderColor = '#A07828')}
                               onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
@@ -372,7 +372,7 @@ export default function Book() {
 
                         {/* Row 3: Full Address */}
                         <div className="flex flex-col gap-1.5">
-                          <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                          <label className="eyebrow text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
                             Full Address *
                           </label>
                           <textarea
@@ -380,7 +380,7 @@ export default function Book() {
                             rows={2}
                             value={guest.address}
                             onChange={e => handleGuestChange(idx, 'address', e.target.value)}
-                            placeholder="Street Address, Apartment/Suite, City, State/Province, Postal Code, Country"
+                            placeholder="Street Address, City, State/Province, Postal Code, Country"
                             style={{ ...inputStyle, resize: 'vertical' }}
                             onFocus={e => (e.target.style.borderColor = '#A07828')}
                             onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
