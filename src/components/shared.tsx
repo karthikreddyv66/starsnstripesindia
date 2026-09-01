@@ -260,7 +260,7 @@ export function Footer() {
             </p>
             <p className="text-white/35 text-xs leading-relaxed">
               Astrophotography &amp; Bengal tiger safari expedition<br />
-              April 5–15, 2027 · Pench &amp; Tadoba, Central India
+              April 5–14, 2027 · Pench &amp; Tadoba, Central India
             </p>
           </div>
           <div>

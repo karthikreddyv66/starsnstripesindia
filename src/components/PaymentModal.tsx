@@ -13,7 +13,7 @@ export default function PaymentModal({
   isOpen,
   onClose,
   itemTitle = 'Expedition Reserve Deposit',
-  amountUSD = 1500,
+  amountUSD = 2000,
   onSuccess,
 }: PaymentModalProps) {
   const [method, setMethod] = useState<'card' | 'upi' | 'netbanking'>('card')

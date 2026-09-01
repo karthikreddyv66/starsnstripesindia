@@ -5,49 +5,100 @@ const FAQS: { category: string; items: { q: string; a: string }[] }[] = [
   {
     category: 'Photography & Skill Level',
     items: [
-      { q: 'What photography skill level is required?', a: 'No prior astrophotography or wildlife photography experience is needed. The tour is structured to guide complete beginners through every technique while offering enough depth and independent shooting time for experienced photographers. You must be comfortable operating a DSLR or mirrorless camera in manual mode.' },
-      { q: 'Do I need a full-frame camera?', a: 'Full-frame is preferred for astrophotography due to better high-ISO performance, but a crop-sensor mirrorless or DSLR will produce excellent results, especially for wildlife. What matters more is a wide-angle lens for stars and a telephoto of at least 200mm for wildlife.' },
-      { q: 'Is a star tracker required for astrophotography?', a: 'No — you will photograph the night sky with and without a tracker. Tracker-based exposures are covered in sessions. If you do not own one, the guides use trackers you can practice alongside. They are available for rent in India before departure.' },
-      { q: 'What focal lengths should I bring?', a: 'Wildlife: 100–400mm minimum; 500mm or longer is excellent. Astrophotography: 14–24mm f/2.8 is ideal; 28mm or 35mm also works. A standard 24–70mm is useful for environmental portraits and lodge life.' },
+      {
+        q: 'What photography skill level is required for this expedition?',
+        a: 'Designed for photographers of all levels! Whether you are an experienced wildlife shooter looking to learn dark-sky techniques, or an astrophotographer wanting tiger field craft, our leaders provide tailored, one-on-one coaching. You should have a basic working familiarity with your camera settings (manual exposure mode).'
+      },
+      {
+        q: 'What camera gear is recommended for wildlife and astrophotography?',
+        a: 'We recommend a DSLR or mirrorless body and a sturdy tripod. For wildlife, bring a telephoto lens (100–400mm or longer). For astrophotography and landscapes, bring a fast wide-angle lens (e.g. 14–24mm f/2.8). Star trackers are optional but recommended for deep-sky panoramas (guides will also demonstrate tracker techniques). Extra batteries and high-capacity memory cards are essential.'
+      },
+      {
+        q: 'What post-processing instruction is provided?',
+        a: 'Guided photo review and post-processing sessions in Adobe Lightroom and Photoshop are led throughout the trip by Co-Director P S Srinivas (“Srini”). You will learn RAW development, exposure stacking, noise control, Milky Way foreground blending, and harsh-light wildlife contrast handling.'
+      },
+      {
+        q: 'How many photographers will be on the trip?',
+        a: 'The expedition is strictly limited to a maximum of 8 photographers. With two co-directors (Himanshu Bagde and Srini) present throughout and joined by DarkSky advocate Abhishek Pawse in Pench, you will enjoy an exceptional leader-to-guest ratio.'
+      },
     ]
   },
   {
-    category: 'Logistics & Travel',
+    category: 'Logistics, Accommodation & Transport',
     items: [
-      { q: 'Which airport should I fly into?', a: 'Nagpur (NAG) is the gateway airport for both reserves. Fly to Nagpur on April 5 and depart from Nagpur on April 15. The tour includes a welcome transfer from Nagpur airport to Pench and a farewell transfer to Nagpur from Tadoba on departure day.' },
-      { q: 'Do I need a visa for India?', a: 'Most nationalities can apply for an Indian e-Visa online before departure — usually approved within 72 hours. Apply at least 2 weeks before travel. Participants are responsible for securing their own visa. Your passport must be valid for at least 6 months from the date of arrival.' },
-      { q: 'What is the best way to get travel insurance?', a: 'Comprehensive travel and health insurance is required. Look for a policy that covers trip cancellation, emergency medical evacuation, and camera/equipment theft or damage. We recommend purchasing this immediately after reserving your spot.' },
-      { q: "What is the weather like in April?", a: "April is central India's peak dry season — hot daytime temperatures (35–42°C / 95–108°F), cool pre-dawn mornings (20–24°C), and virtually zero chance of rain. Humidity is very low, giving exceptional clarity for astrophotography. Bring sun protection and light breathable clothing." },
+      {
+        q: 'Which airport do I fly into and what are the arrival/departure timings?',
+        a: 'All guests fly in and out of Nagpur Airport (NAG). On Day 1 (April 5, 2027), please arrive at Nagpur by 9:30 AM or earlier; our group gathers in the lobby of the Radisson Blu Hotel at 10:00 AM for the 2.5–3 hour drive to Pench. (Pre-night rooms at the Radisson Blu can be arranged upon request). On Day 10 (April 14), transfer from Tadoba to Nagpur Airport will be arranged for flights departing at or after 2:00 PM.'
+      },
+      {
+        q: 'What are the accommodations like in Pench and Tadoba?',
+        a: 'Guests stay in luxury jungle lodges: Saj in the Forest (a boutique resort set across 32 acres near Pench’s Turia Gate) for Nights 1–4, and Tathastu Tadoba (The Tiger Village Resort near Moharli Gate) for Nights 5–9. All accommodations are twin-share in airconditioned rooms with private en-suite bathrooms. Single occupancy upgrades are available for $1,500 USD per person.'
+      },
+      {
+        q: 'What vehicles are used for safaris and road transfers?',
+        a: 'Road transfers between cities and lodges are conducted in private 4x4 Toyota Innova vehicles. Safari game drives utilize dedicated open 4x4 safari jeeps with 4 vehicles (comfortable 2 guests per jeep) for standard safaris and 3 vehicles on 12-hour full-day safaris per park regulations. Co-directors Himanshu and Srini rotate between vehicles daily.'
+      },
+      {
+        q: 'Are drones allowed during the tour?',
+        a: 'Drones are strictly prohibited inside both Pench National Park and Tadoba-Andhari Tiger Reserve. Furthermore, Indian import regulations for foreign drones are complex. We strongly recommend leaving personal drones at home for this expedition.'
+      },
     ]
   },
   {
-    category: 'Safari & Wildlife',
+    category: 'Safaris, Destinations & Weather',
     items: [
-      { q: 'Is tiger sighting guaranteed?', a: 'Tiger sightings cannot be guaranteed in any national park. However, April is the single best month of the year for tiger encounters in both Pench and Tadoba — dry-season waterholes concentrate animals, and both reserves have been operating dedicated photography programs for years. Multiple sightings per guest are the norm, not the exception.' },
-      { q: 'How many safaris are there in total?', a: 'Pench: one afternoon safari per day (Days 2–4), plus the Day 5 afternoon arrival safari. Tadoba: two safaris per day for five days (Days 6–10) — morning at 5 AM and afternoon at 2:30 PM. Total: approximately 12–13 safari sessions over 10 shooting days.' },
-      { q: "Are drones allowed in the reserves?", a: "Drones are strictly prohibited inside all national park zones. Drone use is permitted only at the external Bortle 2 astrophotography site near Pench's Sillari gate. Please ensure your drone has the appropriate Indian civil aviation registration if you plan to bring one." },
-      { q: 'What wildlife besides tigers will I see?', a: 'Both reserves support rich biodiversity. Common sightings include spotted deer (chital), sambar, langur monkeys, wild boar, peacock, raptors and kingfishers. Sloth bear, leopard, gaur (Indian bison), and wild dog (dhole) are also present — occasionally more reliably photographed than tigers.' },
+      {
+        q: 'How many safaris and dark-sky sessions are included?',
+        a: 'The tour includes 9 safaris totaling 52 hours of dedicated field time: 3 afternoon safaris in Pench (4 hours each), 4 half-day safaris in Tadoba (4 hours each), and 2 full-day 12-hour safaris in Tadoba (April 11 & 13) with packed lunches in the park. In addition, there are 4 dedicated dark-sky astrophotography sessions (4–5 hours each) in Pench.'
+      },
+      {
+        q: 'Why are April and new moon chosen for this tour?',
+        a: 'April is peak dry season in central India. Waterholes shrink, concentrating tigers, leopards, sloth bears, and birdlife for the highest probability sightings and extended encounters. April 6 is new moon, guaranteeing the darkest skies of the year in Pench (India’s first Dark Sky Park) with over 5 hours of galactic core visibility per night.'
+      },
+      {
+        q: 'What is the weather like in central India in April?',
+        a: 'Daytime temperatures are warm to hot, regularly exceeding 35°C (up to 40°C), while dawn and late nights are cool and pleasant (20–24°C). The dry climate ensures minimal cloud cover and crystal-clear skies for night photography. We recommend lightweight earth-tone clothing, sun protection (hat, sunglasses, high-SPF sunscreen), and hydration supplements.'
+      },
+      {
+        q: 'Is there any concern regarding altitude sickness?',
+        a: 'No. Both Pench and Tadoba sit at low elevations in central India, so altitude sickness is not a factor on this trip.'
+      },
     ]
   },
   {
-    category: 'Booking & Cancellation',
+    category: 'Pricing, Payments & Cancellation Policy',
     items: [
-      { q: 'How do I reserve my place?', a: 'Complete the enquiry form on the booking page. You will receive a reservation confirmation and deposit invoice within 48 hours. Your place is held from receipt of deposit. The tour has a maximum of 8 participants and typically fills well in advance of the departure date.' },
-      { q: 'What is the cancellation and refund policy?', a: 'Cancellations made more than 120 days before departure receive a full deposit refund minus a processing fee. Cancellations between 90–120 days lose 50% of the full tour price. Cancellations within 90 days of departure are non-refundable. We strongly recommend travel insurance that covers trip cancellation.' },
-      { q: 'Can I join as a solo traveller?', a: 'Yes — the tour is designed for individuals and small groups alike. Solo travellers are paired with same-gender roommates by default. A single-occupancy room upgrade is available for an additional fee, subject to availability at the lodges.' },
-      { q: 'Is the tour suitable for non-photographers travelling with photographers?', a: 'The itinerary is built exclusively around photography and the entire schedule reflects photography priorities. Non-photographers are welcome to travel with the group, but they should be comfortable with the same early starts, late nights, and multiple-hour safaris as everyone else.' },
+      {
+        q: 'What is the price and payment schedule?',
+        a: 'The price is $6,900 USD per person (double occupancy). A deposit of $2,000 USD is required upon booking to secure your spot. The remaining balance of $4,900 USD is due by October 15, 2026. Single room upgrades are $1,500 USD per person, subject to lodge availability.'
+      },
+      {
+        q: 'What is the cancellation and refund policy?',
+        a: 'Our cancellation terms are: 120+ days before tour: 10% administrative fee; 90–75 days before tour: 50% cancellation fee; 75–60 days before tour: 75% cancellation fee; under 60 days or No Show: 100% cancellation fee. We strongly recommend purchasing comprehensive travel and health insurance upon booking.'
+      },
+      {
+        q: 'What is included in the tour price?',
+        a: 'Airport transfers at Nagpur, all inter-park transport in 4x4 Innovas, all safari jeep and national park permit fees (9 safaris total), twin-share AC lodge accommodations with private bathrooms, all meals (breakfast, lunch, dinner), safari refreshments, 4 Pench astro sessions, photo review/post-processing workshops, and pre-tour online planning call.'
+      },
+      {
+        q: 'Do I need a visa to enter India?',
+        a: 'Most nationalities require an Indian e-Tourist Visa to enter the country. Applications can be submitted online well in advance of departure. Your passport must have at least 6 months validity from your date of arrival.'
+      },
     ]
   },
 ]
 
 export default function FAQ() {
-  const [open, setOpen] = useState<string | null>(null)
+  const [open, setOpen] = useState<string | null>('Photography & Skill Level-0')
 
   return (
     <>
-      <PageHero eyebrow="Frequently Asked Questions" title="FAQ"
-        subtitle="Everything you need to know before booking your spot on the expedition."
-        bg={IMG_TIGER2} />
+      <PageHero
+        eyebrow="Frequently Asked Questions"
+        title="Expedition FAQ"
+        subtitle="Everything you need to know about the itinerary, photography program, logistics, and booking terms."
+        bg={IMG_TIGER2}
+      />
 
       <GoldDivider />
 
@@ -64,7 +115,7 @@ export default function FAQ() {
                     <div key={id}
                       style={{ borderBottom: idx < section.items.length - 1 ? '1px solid rgba(13,27,42,0.07)' : 'none', background: '#FFFFFF' }}>
                       <button
-                        className="w-full flex items-start justify-between px-7 py-5 text-left transition-colors"
+                        className="w-full flex items-start justify-between px-7 py-5 text-left transition-colors hover:bg-amber-50/20"
                         style={{ background: isOpen ? '#FAFAF7' : '#FFFFFF' }}
                         onClick={() => setOpen(o => o === id ? null : id)}>
                         <span className="font-semibold text-sm leading-snug pr-6" style={{ color: '#0D1B2A' }}>{item.q}</span>
@@ -73,8 +124,10 @@ export default function FAQ() {
                           <path d="M5 7.5l5 5 5-5" stroke="#A07828" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
-                      <div style={{ maxHeight: isOpen ? '400px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease' }}>
-                        <p className="px-7 pb-6 text-sm leading-[1.85]" style={{ color: '#4A5568' }}>{item.a}</p>
+                      <div style={{ maxHeight: isOpen ? '500px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease' }}>
+                        <div className="px-7 pb-6 pt-1 border-t border-black/[0.03]">
+                          <p className="text-sm leading-[1.85]" style={{ color: '#4A5568' }}>{item.a}</p>
+                        </div>
                       </div>
                     </div>
                   )
@@ -91,7 +144,7 @@ export default function FAQ() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <p className="font-serif text-2xl font-bold mb-2" style={{ color: '#0D1B2A' }}>Still have questions?</p>
-            <p className="text-sm mb-8" style={{ color: '#637282' }}>Contact us directly and we will respond within 48 hours.</p>
+            <p className="text-sm mb-8" style={{ color: '#637282' }}>Send us a message or schedule your pre-tour conversation.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <GoldBtn to="/book">Send an Enquiry</GoldBtn>
               <OutlineBtn to="/pricing">View Pricing</OutlineBtn>
