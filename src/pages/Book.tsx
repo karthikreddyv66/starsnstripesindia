@@ -7,7 +7,8 @@ export interface GuestInfo {
   name: string
   email: string
   phone: string
-  country: string
+  nationality: string
+  address: string
   isPrimaryContact: boolean
 }
 
@@ -29,7 +30,8 @@ export default function Book() {
         name: '',
         email: '',
         phone: '',
-        country: '',
+        nationality: '',
+        address: '',
         isPrimaryContact: true,
       },
     ],
@@ -51,7 +53,8 @@ export default function Book() {
             name: '',
             email: '',
             phone: '',
-            country: '',
+            nationality: '',
+            address: '',
             isPrimaryContact: false,
           })
         }
@@ -187,7 +190,7 @@ export default function Book() {
                     <ul className="space-y-1 text-[#4A5568]">
                       {formData.guests.map((g, i) => (
                         <li key={i}>
-                          • {g.name || `Guest ${i + 1}`} {i === 0 ? '(Primary Contact)' : ''}
+                          • {g.name || `Guest ${i + 1}`} ({g.nationality || 'Nationality pending'}) {i === 0 ? '— Primary Contact' : ''}
                         </li>
                       ))}
                     </ul>
@@ -280,7 +283,7 @@ export default function Book() {
                     return (
                       <div
                         key={idx}
-                        className={`p-5 rounded-sm transition-all ${
+                        className={`p-5 sm:p-6 rounded-sm transition-all ${
                           isPrimary
                             ? 'bg-[#FAFAF7] border-l-4 border-l-[#A07828] border border-black/[0.08]'
                             : 'bg-[#FCFCFA] border border-black/[0.08]'
@@ -297,7 +300,7 @@ export default function Book() {
                           )}
                         </div>
 
-                        {/* Name & Email */}
+                        {/* Row 1: Full Name & Email Address */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
                             <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
@@ -332,18 +335,18 @@ export default function Book() {
                           </div>
                         </div>
 
-                        {/* Phone & Country */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {/* Row 2: Phone (include code) & Nationality */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <div className="flex flex-col gap-1.5">
                             <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
-                              Phone Number {isPrimary ? '*' : '(Optional)'}
+                              Phone Number (Include Country Code) {isPrimary ? '*' : '(Optional)'}
                             </label>
                             <input
                               type="tel"
                               required={isPrimary}
                               value={guest.phone}
                               onChange={e => handleGuestChange(idx, 'phone', e.target.value)}
-                              placeholder="+1 (555) 000-0000"
+                              placeholder="+1 (555) 000-0000 / +91 98765 43210"
                               style={inputStyle}
                               onFocus={e => (e.target.style.borderColor = '#A07828')}
                               onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
@@ -352,19 +355,36 @@ export default function Book() {
 
                           <div className="flex flex-col gap-1.5">
                             <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
-                              Country {isPrimary ? '*' : '(Optional)'}
+                              Nationality *
                             </label>
                             <input
                               type="text"
-                              required={isPrimary}
-                              value={guest.country}
-                              onChange={e => handleGuestChange(idx, 'country', e.target.value)}
-                              placeholder="Country of residence"
+                              required
+                              value={guest.nationality}
+                              onChange={e => handleGuestChange(idx, 'nationality', e.target.value)}
+                              placeholder="e.g. American, Indian, British, Australian..."
                               style={inputStyle}
                               onFocus={e => (e.target.style.borderColor = '#A07828')}
                               onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
                             />
                           </div>
+                        </div>
+
+                        {/* Row 3: Full Address */}
+                        <div className="flex flex-col gap-1.5">
+                          <label className="eyebrow text-[10px]" style={{ color: '#637282' }}>
+                            Full Address *
+                          </label>
+                          <textarea
+                            required
+                            rows={2}
+                            value={guest.address}
+                            onChange={e => handleGuestChange(idx, 'address', e.target.value)}
+                            placeholder="Street Address, Apartment/Suite, City, State/Province, Postal Code, Country"
+                            style={{ ...inputStyle, resize: 'vertical' }}
+                            onFocus={e => (e.target.style.borderColor = '#A07828')}
+                            onBlur={e => (e.target.style.borderColor = 'rgba(13,27,42,0.18)')}
+                          />
                         </div>
                       </div>
                     )
