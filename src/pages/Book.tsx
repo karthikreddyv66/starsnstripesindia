@@ -267,28 +267,16 @@ export default function Book() {
         body: JSON.stringify(payload),
       })
 
-      /*
-       * Read Apps Script response.
-       */
       const result = await response.json()
 
       if (!response.ok || !result.success) {
         throw new Error(
           result.message ||
-          'Unable to submit your reservation. Please try again.'
+            'Unable to submit your reservation. Please try again.'
         )
       }
 
-      /*
-       * Apps Script successfully:
-       *
-       * 1. Generated Reservation ID
-       * 2. Saved reservation
-       * 3. Saved all guests
-       * 4. Sent confirmation email
-       */
       setReservationId(result.reservationId || '')
-
       setSubmitted(true)
     } catch (error) {
       console.error('Reservation submission error:', error)
