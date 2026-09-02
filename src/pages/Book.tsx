@@ -257,15 +257,12 @@ export default function Book() {
       }
 
       /*
-       * Send reservation to Google Apps Script.
-       *
-       * text/plain is intentional here. It avoids the browser
-       * sending a CORS preflight request to Google Apps Script.
+       * Send reservation to Vercel serverless function proxy.
        */
-      const response = await fetch(APPS_SCRIPT_URL, {
+      const response = await fetch('/api/reservation', {
         method: 'POST',
         headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
       })
