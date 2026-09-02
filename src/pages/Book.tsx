@@ -737,7 +737,7 @@ export default function Book() {
 
                             <input
                               type="email"
-                              required={isPrimary}
+                              required
                               value={guest.email}
                               onChange={e =>
                                 handleGuestChange(
@@ -777,7 +777,7 @@ export default function Book() {
 
                             <input
                               type="tel"
-                              required={isPrimary}
+                              required
                               value={guest.phone}
                               onChange={e =>
                                 handleGuestChange(

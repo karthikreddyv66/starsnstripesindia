@@ -45,6 +45,7 @@ export default async function handler(req: any, res: any) {
         success: false,
         message:
           result.message ||
+          result.error ||
           'Google Apps Script rejected the reservation.',
       })
     }
