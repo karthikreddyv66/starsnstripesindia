@@ -729,10 +729,7 @@ export default function Book() {
 
                           <div className="flex flex-col gap-1.5">
                             <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
-                              Email Address{' '}
-                              {isPrimary
-                                ? '*'
-                                : '(Optional)'}
+                              Email Address *
                             </label>
 
                             <input
@@ -769,10 +766,7 @@ export default function Book() {
 
                           <div className="flex flex-col gap-1.5">
                             <label className="eyebrow text-[9.5px] sm:text-[10px] h-4 flex items-center whitespace-nowrap text-[#637282]">
-                              Phone (Include Code){' '}
-                              {isPrimary
-                                ? '*'
-                                : '(Optional)'}
+                              Phone (Include Code) *
                             </label>
 
                             <input
