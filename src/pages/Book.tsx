@@ -241,7 +241,9 @@ export default function Book() {
        */
       const payload = {
         numberOfGuests: formData.numberOfGuests,
-        occupancy: formData.occupancy,
+        occupancy: formData.occupancy.includes('Single')
+          ? 'single'
+          : 'twin-share',
         photographyExperience: formData.photographyExperience,
 
         guests: formData.guests.map((guest, index) => ({
