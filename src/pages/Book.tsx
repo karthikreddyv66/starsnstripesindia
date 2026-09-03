@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {
   FadeIn,
   GoldDivider,
@@ -31,7 +31,7 @@ export interface ReservationFormData {
  * Google Apps Script Web App
  */
 const APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxfujNTgjOp4MdKWyvJA4_agTN38VVQVWqKDeFyve9Az68-AaQcfx1wI2PNrPqj2i4MA/exec'
+  'https://script.google.com/macros/s/AKfycbyJPuT2hbmKJ5I-Kg3REcp_SsyWWHZTW9k4w8li70B2h5-Q0kXSwsAyA7ZoCr6ITomQzA/exec'
 
 export default function Book() {
   const [formData, setFormData] = useState<ReservationFormData>({
@@ -57,6 +57,17 @@ export default function Book() {
   const [reservationId, setReservationId] = useState('')
   const [agreedToTerms, setAgreedToTerms] = useState(false)
   const [showTermsModal, setShowTermsModal] = useState(false)
+  const reservationReceivedRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (submitted) {
+      if (reservationReceivedRef.current) {
+        reservationReceivedRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }
+  }, [submitted])
 
   /*
    * Change number of guests dynamically.
@@ -420,7 +431,7 @@ export default function Book() {
               /* ─────────────────────────────────────────────────────
                  SUCCESS STATE
                  ───────────────────────────────────────────────────── */
-              <div className="p-12 text-center">
+              <div ref={reservationReceivedRef} className="p-8 sm:p-12 text-center scroll-mt-28 animate-fadeIn">
 
                 <div
                   className="w-14 h-14 rounded-full mx-auto mb-6 flex items-center justify-center"
