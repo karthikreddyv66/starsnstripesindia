@@ -1,5 +1,5 @@
 const APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbyJPuT2hbmKJ5I-Kg3REcp_SsyWWHZTW9k4w8li70B2h5-Q0kXSwsAyA7ZoCr6ITomQzA/exec'
+  'https://script.google.com/macros/s/AKfycbzIkYg2gk04CKIp2DwXLaoxVlD4-rYwOJAJUfeI8lSWqHFJRNucwAKvWQSOh-vIYEFIGQ/exec'
 
 export default async function handler(req: any, res: any) {
   try {

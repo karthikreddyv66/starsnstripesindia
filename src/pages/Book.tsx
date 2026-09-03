@@ -31,7 +31,7 @@ export interface ReservationFormData {
  * Google Apps Script Web App
  */
 const APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbyJPuT2hbmKJ5I-Kg3REcp_SsyWWHZTW9k4w8li70B2h5-Q0kXSwsAyA7ZoCr6ITomQzA/exec'
+  'https://script.google.com/macros/s/AKfycbzIkYg2gk04CKIp2DwXLaoxVlD4-rYwOJAJUfeI8lSWqHFJRNucwAKvWQSOh-vIYEFIGQ/exec'
 
 export default function Book() {
   const [formData, setFormData] = useState<ReservationFormData>({
