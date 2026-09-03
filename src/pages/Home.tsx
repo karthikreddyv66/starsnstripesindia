@@ -61,7 +61,7 @@ export default function Home() {
           background: 'linear-gradient(to bottom, rgba(7,13,22,0.5) 0%, rgba(7,13,22,0.3) 30%, rgba(7,13,22,0.72) 75%, rgba(7,13,22,0.98) 100%)',
         }} />
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-[130px] pb-14 flex flex-col items-center gap-4">
-          
+
           {/* Header 1 */}
           <p className="hero-in eyebrow tracking-[0.2em] uppercase font-semibold text-xs md:text-sm" style={{ color: '#C9A24B' }}>
             AN ASTROPHOTOGRAPHY + TIGER PHOTOGRAPHY EXPEDITION
@@ -98,22 +98,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Lead Summary */}
-          <p className="hero-in hero-in-d3 text-white/75 text-sm md:text-base max-w-3xl leading-relaxed">
-            Photograph the Milky Way over Bengal tiger habitat in Pench, India's first Dark Sky Park, then spend four days pursuing tigers in Tadoba-Andhari — including two full-day safaris — one of central India's most tiger-dense reserves. Designed for photographers of all levels.
-          </p>
-
-          {/* Bottom banner */}
-          <div className="hero-in hero-in-d4 mt-3 px-7 py-5 max-w-3xl w-full text-center rounded-sm"
-            style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(10px)', border: '1px solid rgba(201,162,75,0.35)' }}>
-            <p className="font-serif italic text-white/95 text-base md:text-lg leading-relaxed">
-              Milky Way nights. Tiger safaris at golden light. One seamless photography journey
-            </p>
-            <div style={{ height: 1, background: 'linear-gradient(90deg,transparent,rgba(201,162,75,0.4),transparent)', margin: '12px 0' }} />
-            <p className="eyebrow text-white/75 text-[11px] md:text-xs tracking-wider">
-              APRIL 5–9: ASTROPHOTOGRAPHY AND TIGER SAFARIS IN PENCH | APRIL 9–14: TIGER SAFARIS IN TADOBA
-            </p>
-          </div>
 
           {/* Action buttons */}
           <div className="hero-in hero-in-d5 flex flex-col sm:flex-row gap-4 mt-3">
@@ -152,7 +136,7 @@ export default function Home() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-8" style={{ color: '#0D1B2A' }}>
               The experience — Two worlds. One unforgettable journey.
             </h2>
-            
+
             <p className="text-base leading-relaxed mb-6" style={{ color: '#3D4F60' }}>
               This 10-day India photography tour combines two extraordinary experiences in one seamless itinerary — the inaugural edition of what we intend to run as a recurring expedition. Two of the most compelling subjects in nature photography in one trip: dark-sky astrophotography and Bengal tiger wildlife photography. The journey opens in the pristine, internationally certified dark skies of Pench National Park, which was designated India's first Dark Sky Park in January 2024 with developed stargazing infrastructure including observatory facilities. Pench is a rare setting for night-sky photography inside a tiger landscape. The second half moves to Tadoba-Andhari Tiger Reserve, one of central India's best-known tiger destinations, where photographers work from safari vehicles in search of Bengal tigers and other wildlife during the best light of the day.
             </p>
@@ -177,7 +161,7 @@ export default function Home() {
 
             {/* Pench & Tadoba Destination Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              
+
               {/* Pench National Park */}
               <div className="p-8 rounded-sm bg-white flex flex-col justify-between" style={{ border: '1px solid rgba(13,27,42,0.08)', boxShadow: 'var(--shadow)' }}>
                 <div>

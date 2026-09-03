@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo.jpg'
 import { IMG_KAIOTIX_LOGO } from '../assets/kaiotixData'
+import TermsModal from './TermsModal'
 
 // ── Images ───────────────────────────────────────────────────────────────────
 export const IMG_HERO = 'https://images.unsplash.com/photo-1592636120953-3d2b28ebfd69?w=1800&h=1000&fit=crop&auto=format'
@@ -149,6 +150,12 @@ export function Nav() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
 
+  const handleNavClick = (to: string) => {
+    if (pathname === to) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   // Always white navbar
   const bg = '#FFFFFF'
   const border = '1px solid rgba(13,27,42,0.08)'
@@ -162,7 +169,7 @@ export function Nav() {
       style={{ background: bg, borderBottom: border, boxShadow: shadow, backdropFilter: 'blur(0)' }}
     >
       <div className="max-w-7xl mx-auto px-6 h-[84px] flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 shrink-0 py-1">
+        <Link to="/" onClick={() => handleNavClick('/')} className="flex items-center gap-3 shrink-0 py-1">
           <img
             src={IMG_LOGO}
             alt="Stars, Stripes & Wild India"
@@ -176,6 +183,7 @@ export function Nav() {
             const active = pathname === l.to
             return (
               <Link key={l.label} to={l.to}
+                onClick={() => handleNavClick(l.to)}
                 className="text-[11px] tracking-wider uppercase font-medium transition-colors duration-200"
                 style={{ color: active ? '#A07828' : textBase }}
                 onMouseEnter={e => { if (!active) e.currentTarget.style.color = textHov }}
@@ -186,6 +194,7 @@ export function Nav() {
             )
           })}
           <Link to="/book"
+            onClick={() => handleNavClick('/book')}
             className="ml-3 px-5 py-2.5 text-[10px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all"
             style={{ background: '#A07828', color: '#fff' }}
             onMouseEnter={e => (e.currentTarget.style.background = '#7A5C1E')}
@@ -219,13 +228,13 @@ export function Nav() {
       }}>
         <div className="flex flex-col px-6 py-5 gap-4" style={{ borderTop: '1px solid rgba(13,27,42,0.07)' }}>
           {NAV_LINKS.map(l => (
-            <Link key={l.label} to={l.to} onClick={() => setOpen(false)}
+            <Link key={l.label} to={l.to} onClick={() => { setOpen(false); handleNavClick(l.to) }}
               className="text-sm tracking-wider uppercase font-medium"
               style={{ color: '#0D1B2A' }}>
               {l.label}
             </Link>
           ))}
-          <Link to="/book" onClick={() => setOpen(false)}
+          <Link to="/book" onClick={() => { setOpen(false); handleNavClick('/book') }}
             className="mt-2 px-5 py-3 text-[10px] tracking-[0.18em] uppercase font-semibold text-center rounded-sm"
             style={{ background: '#A07828', color: '#fff' }}>
             Book Now
@@ -248,81 +257,101 @@ const FOOTER_LINKS = [
 ]
 
 export function Footer() {
+  const [showTermsModal, setShowTermsModal] = useState(false)
+  const { pathname } = useLocation()
+  const handleNavClick = (to: string) => {
+    if (pathname === to) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <footer style={{ background: '#0D1B2A', borderTop: '3px solid #A07828' }} className="py-16 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div>
-            <p className="eyebrow text-[10px] tracking-[0.22em] mb-4" style={{ color: '#C9A24B' }}>
-              Stars, Stripes &amp; Wild India
-            </p>
-            <p className="font-serif text-lg text-white/80 italic leading-relaxed mb-3">
-              "Two extraordinary worlds.<br />One perfectly timed journey."
-            </p>
-            <p className="text-white/35 text-xs leading-relaxed">
-              Astrophotography &amp; Bengal tiger safari expedition<br />
-              April 5–14, 2027 · Pench &amp; Tadoba, Central India
-            </p>
-          </div>
-          <div>
-            <p className="eyebrow text-[10px] mb-5" style={{ color: 'rgba(255,255,255,0.3)' }}>Navigation</p>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
-              {FOOTER_LINKS.map(l => (
-                <li key={l.label}>
-                  <Link to={l.to} className="text-white/45 text-sm hover:text-white/80 transition-colors">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="eyebrow text-[10px] mb-5" style={{ color: 'rgba(255,255,255,0.3)' }}>Contact</p>
-            <a href="mailto:info@starsnstripesindia.com"
-              className="text-sm block mb-4 hover:underline transition-colors"
-              style={{ color: '#C9A24B' }}>
-              info@starsnstripesindia.com
-            </a>
-            <Link to="/book"
-              className="inline-block px-6 py-2.5 text-[10px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all"
-              style={{ background: '#A07828', color: '#fff' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#7A5C1E')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#A07828')}
-            >
-              Reserve Your Spot
-            </Link>
-          </div>
-        </div>
-        <div style={{ height: 1, background: 'rgba(255,255,255,0.08)' }} className="mb-6" />
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-white/40 text-xs">
-          <div>
-            <p>© 2027 Stars, Stripes &amp; Wild India. All rights reserved.</p>
-            <div className="mt-3 flex flex-wrap items-center gap-2.5">
-              <span className="text-xs text-white/45 font-medium">Developed by</span>
-              <a
-                href="https://www.kaiotix.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded overflow-hidden shadow-sm hover:opacity-90 transition-all border border-white/20"
-                title="Kaiotix Technologies"
-              >
-                <img
-                  src={IMG_KAIOTIX_LOGO}
-                  alt="Kaiotix Technologies"
-                  className="h-8 sm:h-9 md:h-10 w-auto block object-cover"
-                />
+    <>
+      <footer style={{ background: '#0D1B2A', borderTop: '3px solid #A07828' }} className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+              <p className="eyebrow text-[10px] tracking-[0.22em] mb-4" style={{ color: '#C9A24B' }}>
+                Stars, Stripes &amp; Wild India
+              </p>
+              <p className="font-serif text-lg text-white/80 italic leading-relaxed mb-3">
+                "Two extraordinary worlds.<br />One perfectly timed journey."
+              </p>
+              <p className="text-white/35 text-xs leading-relaxed">
+                Astrophotography &amp; Bengal tiger safari expedition<br />
+                April 5–14, 2027 · Pench &amp; Tadoba, Central India
+              </p>
+            </div>
+            <div>
+              <p className="eyebrow text-[10px] mb-5" style={{ color: 'rgba(255,255,255,0.3)' }}>Navigation</p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                {FOOTER_LINKS.map(l => (
+                  <li key={l.label}>
+                    <Link to={l.to} onClick={() => handleNavClick(l.to)} className="text-white/45 text-sm hover:text-white/80 transition-colors">{l.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="eyebrow text-[10px] mb-5" style={{ color: 'rgba(255,255,255,0.3)' }}>Contact</p>
+              <a href="mailto:info@starsnstripesindia.com"
+                className="text-sm block mb-4 hover:underline transition-colors"
+                style={{ color: '#C9A24B' }}>
+                info@starsnstripesindia.com
               </a>
-              <span className="text-white/25">·</span>
-              <span className="text-xs text-white/45">
-                Mail: <a href="mailto:sales@kaiotix.com" className="hover:underline text-[#C9A24B] font-medium transition-colors">sales@kaiotix.com</a>
-              </span>
+              <Link to="/book"
+                onClick={() => handleNavClick('/book')}
+                className="inline-block px-6 py-2.5 text-[10px] tracking-[0.18em] uppercase font-semibold rounded-sm transition-all"
+                style={{ background: '#A07828', color: '#fff' }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#7A5C1E')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#A07828')}
+              >
+                Reserve Your Spot
+              </Link>
             </div>
           </div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white/60 transition-colors">Terms &amp; Conditions</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Privacy Policy</a>
+          <div style={{ height: 1, background: 'rgba(255,255,255,0.08)' }} className="mb-6" />
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-white/40 text-xs">
+            <div>
+              <p>© 2027 Stars, Stripes &amp; Wild India. All rights reserved.</p>
+              <div className="mt-3 flex flex-wrap items-center gap-2.5">
+                <span className="text-xs text-white/45 font-medium">Developed by</span>
+                <a
+                  href="https://www.kaiotix.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded overflow-hidden shadow-sm hover:opacity-90 transition-all border border-white/20"
+                  title="Kaiotix Technologies"
+                >
+                  <img
+                    src={IMG_KAIOTIX_LOGO}
+                    alt="Kaiotix Technologies"
+                    className="h-8 sm:h-9 md:h-10 w-auto block object-cover"
+                  />
+                </a>
+                <span className="text-white/25">·</span>
+                <span className="text-xs text-white/45">
+                  Mail: <a href="mailto:sales@kaiotix.com" className="hover:underline text-[#C9A24B] font-medium transition-colors">sales@kaiotix.com</a>
+                </span>
+              </div>
+            </div>
+            <div className="flex gap-6">
+              <button
+                type="button"
+                onClick={() => setShowTermsModal(true)}
+                className="text-white/40 hover:text-white/80 transition-colors cursor-pointer text-xs underline-offset-4 hover:underline bg-transparent border-0 p-0"
+              >
+                Terms &amp; Conditions
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+      <TermsModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+      />
+    </>
   )
 }
 
